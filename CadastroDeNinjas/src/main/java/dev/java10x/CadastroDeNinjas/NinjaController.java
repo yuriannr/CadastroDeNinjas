@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController //Controlador para API Rest
 @RequestMapping
-public class Controller {
+public class NinjaController {
 
     @GetMapping("/boasvindas") //Pegar Informações
     public String boasVindas(){
