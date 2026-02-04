@@ -16,11 +16,17 @@ import java.util.List;
 public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
+    @Column(name = "dificuldade")
     private String dificuldade;
+
+    @Column(name = "img_url")
+    private String imgUrl;
     //Uma missão para muitos ninjas
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;
