@@ -1,10 +1,18 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+
 @RestController //Controlador para API Rest
-@RequestMapping
+@RequestMapping("/ninja")
+@RequiredArgsConstructor
 public class NinjaController {
+    private final NinjaService ninjaService;
+
 
     @GetMapping("/boasvindas") //Pegar Informações
     public String boasVindas(){
@@ -18,10 +26,11 @@ public class NinjaController {
     }
 
     //Mostrar todos os Ninjas (READ)
-    @GetMapping("/all")
-    public String mostrarTodos(){
-        return "Mostrar todos ninjas";
+    @GetMapping("/listar")
+    public List <NinjaModel> listarNinjas(){
+        return ninjaService.listarNinjas();
     }
+
     //Mostrar Ninjas por ID (READ)
     @GetMapping("/ninjasporid")
     public String ninjasPorID(){
