@@ -16,11 +16,12 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //estrategia de ordenação de ID
+    @Column(name = "id")
     private Long id;
-
+    @Column(name ="nome")
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "email")
     private String email;
 
     private int idade;
